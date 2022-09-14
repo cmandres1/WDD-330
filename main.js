@@ -1,11 +1,11 @@
 const getList = document.getElementById('link-list');
 const links = [{
-        label: "Week1 Notes",
-        url: "Week1/index.html"
+        label: "Week 01 Notes",
+        url: "Week01/index.html"
     },
     {
-        label: "Week2 Notes",
-        url: "Week2/index.html"
+        label: "Week 02 Notes",
+        url: "Week02/index.html"
     }
 ];
 
