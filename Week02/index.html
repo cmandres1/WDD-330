@@ -4,101 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Activity</title>
+    <title>Week 02</title>
 </head>
+
 <body>
-    <input type="text" id="input1">
-    <button onclick="one()">Click</button>
-    <div id="div1"></div>
-
-    <hr>
-
-    <input type="text" id="input2">
-    <button onclick="validate(this)" id="sum">+</button>
-    <button onclick="validate(this)" id="subs">-</button>
-    <button onclick="validate(this)" id="mul">x</button>
-    <button onclick="validate(this)" id="div">/</button>
-    <input type="text" id="input3">
-    <div id="result"></div>
-
-    <script>
-        function one() {
-            const input1 = document.querySelector("#input1").value;
-            const suma = two(input1);
-            console.log(suma)
-            document.querySelector("#div1").innerHTML = suma;
-        }
-
-
-        function two(num) {
-
-            const num2 = Number(num);
-            if (!Number.isNaN(num2)) {
-                console.log("en if")
-                let sum = 0;
-                for (let i = 0; i <= num; i++) {
-                    sum += i;
-                }
-                return sum;
-            }
-            return "Invalid input"
-        }
-
-
-        function sum(n1, n2) {
-            return n1 + n2
-        }
-
-        function subs(n1, n2) {
-            return n1 - n2
-        }
-
-        function mul(n1, n2) {
-            return n1 * n2
-        }
-
-        function div(n1, n2) {
-            if(n2 !== 0){
-                return n1 / n2
-            }
-            else {
-                return "Invalid Input"
-            }
-            
-        }
-
-        const validate = (btn) => {
-            const input2 = document.querySelector("#input2").value;
-            const input3 = document.querySelector("#input3").value;
-
-            const n1 = Number(input2);
-            const n2 = Number(input3);
-
-            const selected = btn.textContent;
-
-
-            if (!Number.isNaN(n1) && !Number.isNaN(n2)) {
-                switch (selected) {
-                    case "+":
-                        document.querySelector("#result").innerHTML = sum(n1, n2);
-                        break;
-                    case "-":
-                        document.querySelector("#result").innerHTML = subs(n1, n2);
-                        break;
-                    case "x":
-                        document.querySelector("#result").innerHTML = mul(n1, n2);
-                        break;
-                    case "/":
-                        document.querySelector("#result").innerHTML = div(n1, n2);
-                        break;
-                }
-
-            }
-            else {
-                document.querySelector("#result").innerHTML = "Invalid Input";
-            }
-
-        }
-    </script>
+    <h1>Week 02 Team Activity</h1>
+    <a href="teamActivity.html">Team Activity</a>
+    <h1>Week 02 Readings</h1>
+    <div class="js_readings">
+        <h4 first> Reserved Words – Infinity:</h4>
+        <p>New to me, until today I did not know that there was an "Infinity" in JavaScript, I had never thought about a
+            number whose value was so large that it could not be calculated by a programming language.</p>
+        <h4>Methods:</h4>
+        <p>There are many methods for working with numbers and strings that I didn't know about and they are all quite
+            useful. I usually prefer to watch video tutorials instead of reading, but there is a lot of information that
+            can't be shared in a 10-15 minutes video, let alone explained as they do in books or internet as the case of
+            all those methods.</p>
+        <h4>Question:</h4>
+        <p>The "spread" operator is also something I didn't know, I think it is very useful to work with Arrays and to
+            be able to join all their values in a single Array.
+            Although there are many similarities between Arrays, Sets and Map, I also see that there is something that
+            makes them unique for when we need to use them
+            <b class="question"> which one is more common or more used of the 3? and why?</b>
+        </p>
+        <h4>Logic:</h4>
+        <p>Ternary operator, I know that you are constantly looking for improvements to prevent the code from being too
+            long and that you don't have more lines of code than necessary, I think it is a great help, both in having
+            less lines of code as well as the time needed to code it.</p>
+        <h4>Functions:</h4>
+        <p>Last week when I saw some examples, I wondered what is "hoisting" and in the Functions section it explains it
+            very clearly, I thought it would be something complicated, but I see it as a way to try to avoid that there
+            is an error. The use of "const" and "let" is a recommendation as a good practice. Maybe the issue is more
+            complicated than I can understand now, but for the time being I think trying to avoid it will be the best
+            thing to do.
+            For me the most important part of the section are "callbacks", calling parts of code that is already written
+            to avoid writing or repeating it is in my opinion something very useful. I haven't known JavaScript for a
+            long time, but from what I see in books and tutorials, it has been updated to improve runtime based and add
+            more options to make it easier for the programmer to get what he needs.
+        </p>
+    </div>
 </body>
 </html>
