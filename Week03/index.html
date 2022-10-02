@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,13 +12,64 @@
     <h1>Week 03 Team Activity</h1>
     <a href="teamActivity.html">Team Activity</a>
     <h1>Week 03 Readings</h1>
-    <div class="js_readings">
-        <h4>M</h4>
-        <p>There </p>
+    <div class="js_objects">
+        <h4>Object Methods – this :</h4>
+        <p>To access the object, a method can use the “this” keyword.
+            The value of this is the object “before dot”, the one used to call the method.
+            From what I understand JavaScript is not an object-oriented language, but it has a lot of support for it I
+            think which is perhaps what makes it so functional and so widely used. I remember reading that, almost
+            everything in JavaScript is an object. In fact, only six things are not objects. They are - null, undefined,
+            strings, numbers, boolean, and symbols.
+        </p>
+        <h4>Computed Properties:</h4>
+        <p>The ability to create objects with computed property keys was introduced in ES6. This means that JavaScript
+            code can be placed inside square brackets and the property key will be the return value of that code. This
+            can be seen in the example below where the + operator is used to concatenate the strings 'catch' and
+            'phrase':
+
+            const hulk = { name: 'Hulk', ['catch' + 'Phrase']: 'Hulk Smash!' };
+
+            Objects have many utilities and can even be constantly updated or changed, such as adding properties or
+            changing properties, or even creating objects that have other objects.
+            You can copy or clone objects, but those cloned objects will point to the same space in memory.
+        </p>
+        <h4>JSON</h4>
+        <p>JavaScript Object Notation, or JSON, was invented by Douglas Crockford in 2001. It is an extremely popular
+            lightweight data-storage format that is used by a large number of services for data serialization and
+            configuration. It is often used to exchange information between web services, and is employed by sites such
+            as Twitter, Facebook and Trello to share information. The beauty of JSON is that it manages to hit the sweet
+            spot between being both human- and machine-readable.
+            The objects that are already inside JavaScript make everything easier, for me the idea of programming is to
+            make everything easier, and even that can be applied within programming languages, it is not necessary to be
+            creating over and over again something that has already been done before, all these objects built into JS
+            are very useful and makes everything easier.
+        </p>
         <h4>Question:</h4>
-        <p>
-            <b class="question"> ?</b>
+        <p>The validations with RegExp and how they are written inside JS has been something very complicated for me to
+            understand, but my doubt is, <b class="question"> they are very used or it is the simplest way? there is
+                something similar?</b>
+            probably it is only a matter of dedicating more time specifically to investigate them and to be able to see
+            the true utility of RegExp.
+        </p>
+    </div>
+    <div class="js_dom">
+        <h4>DOM:</h4>
+        <p>Of all the ways to get an element I think the one I've seen used the most or perhaps the most useful for me
+            is "document.querySelector".
+            Having access to the DOM is something really useful to be able to "show" what we are coding in a more
+            friendly or simple way to the eye.
+            There are many useful properties to modify it and even add visual components with CSS.
+        </p>
+    </div>
+    <div class="js_events">
+        <h4>Events:</h4>
+        <p>Whenever an event handler is triggered by an event, the callback function is called. This function is
+            automatically passed an event object as a parameter that contains information about the event.</p>
+        <h4>Question:</h4>
+        <p>There is a very large number of event types, although they should all be equally useful, I think it will be
+            complicated to know or even use them all,<b class="question"> what are the most common or most used event types?</b>
         </p>
     </div>
 </body>
+
 </html>
