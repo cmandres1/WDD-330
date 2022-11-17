@@ -38,7 +38,12 @@ const links = [{
     {
         label: "Week 10 Notes",
         url: "Week10/index.html"
+    },
+    {
+        label: "Week 11 Notes",
+        url: "Week11/index.html"
     }
+
 ];
 
 links.forEach((link) => {
