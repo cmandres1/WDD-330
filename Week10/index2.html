@@ -12,28 +12,120 @@
     <h1>Week 10 Team Activity</h1>
     <a href="index.html">Team Activity</a>
     <h1>Week 10 Readings</h1>
-    <div class="js_dialogs">
-        <h4>Dialogs:</h4>
-        <p><b>:</b>
+    <div class="js_validationApi">
+        <h4>Constraint Validation API:</h4>
+        <p>Most browsers support the Constraint Validation API, which consists of a set of methods and properties
+            available on the following form element DOM interfaces:
+            <ul>HTMLButtonElement (represents a "button" element)</ul>
+            <ul>HTMLFieldSetElement (represents a "fieldset" element)</ul>
+            <ul>HTMLInputElement (represents an "input" element)</ul>
+            <ul>HTMLOutputElement (represents an "output" element)</ul>
+            <ul>HTMLSelectElement (represents a "select" element)</ul>
+            <ul>HTMLTextAreaElement (represents a "textarea" element)</ul>
         </p>
     </div>
-    <div class="js_screen_object:">
-        <h4>:</h4>
-        <p>
-            
+    <div class="js_validationApi2">
+        <p>The Constraint Validation API also makes the following methods available on the above elements and the form
+            element.
+            <ul><b>checkValidity():</b> Returns true if the element's value has no validity problems; false otherwise.
+                If the
+                element is invalid, this method also fires an invalid event on the element.</ul>
+            <ul><b>reportValidity():</b> Reports invalid field(s) using events. Useful in combination with
+                preventDefault() in
+                an onSubmit event handler</ul>
+            <ul><b>setCustomValidity(message):</b> Adds a custom error message to the element; if you set a custom error
+                message, the element is considered to be invalid, and the specified error is displayed. This lets you
+                use JavaScript code to establish a validation failure other than those offered by the standard HTML
+                validation constraints. The message is shown to the user when reporting the problem.</ul>
         </p>
     </div>
-    <div class="js_animations:">
-        <h4>:</h4>
-        <p>
-            
+    <div class="js_question">
+        <h4>Question:</h4>
+        <p>validation with HTML5 seems much simpler than js,<b>but which of the 2 is better or safer to use?</b>
+
         </p>
     </div>
 
-    <div class="js_apis:">
-        <h4>:</h4>
+    <div class="js_supplying:">
+        <h4>Supplying request options:</h4>
+        <p><b>Mode:</b> <br>
+            The mode option is a safe-guard that prevents occasional cross-origin requests: <br>
+
+            <ul><b>"cors"</b> – the default, cross-origin requests are allowed, as described in Fetch: Cross-Origin
+                Requests,</ul>
+            <ul><b>"same-origin"</b> – cross-origin requests are forbidden,</ul>
+            <ul><b>"no-cors"</b> – only safe cross-origin requests are allowed. <br>
+                This option may be useful when the URL for fetch comes from a 3rd-party, and we want a “power off
+                switch” to limit cross-origin capabilities.</ul>
+        </p>
         <p>
-            
+            <b>Credentials:</b> <br>
+            The credentials option specifies whether fetch should send cookies and HTTP-Authorization headers with the
+            request. <br>
+
+            <ul><b>"same-origin"</b>– the default, don’t send for cross-origin requests,</ul>
+            <ul><b>"include"</b>– always send, requires Access-Control-Allow-Credentials from cross-origin server in
+                order for
+                JavaScript to access the response, that was covered in the chapter Fetch: Cross-Origin Requests,</ul>
+            <ul><b>"omit"</b>– never send, even for same-origin requests.</ul>
+        </p>
+
+        <p>
+            <b>Cache:</b> <br>
+            By default, fetch requests make use of standard HTTP-caching. That is, it respects the Expires and
+            Cache-Control headers, sends If-Modified-Since and so on. Just like regular HTTP-requests do. <br>
+
+            The cache options allows to ignore HTTP-cache or fine-tune its usage: <br>
+            <ul><b>"default"</b>– fetch uses standard HTTP-cache rules and headers,</ul>
+            <ul><b>"no-store"</b> – totally ignore HTTP-cache, this mode becomes the default if we set a header
+                If-Modified-Since, If-None-Match, If-Unmodified-Since, If-Match, or If-Range,</ul>
+            <ul><b>"reload"</b>– don’t take the result from HTTP-cache (if any), but populate the cache with the
+                response (if the response headers permit this action),</ul>
+            <ul><b>"no-cache"</b> – create a conditional request if there is a cached response, and a normal request
+                otherwise. Populate HTTP-cache with the response,</ul>
+            <ul><b>"force-cache"</b> – use a response from HTTP-cache, even if it’s stale. If there’s no response in
+                HTTP-cache, make a regular HTTP-request, behave normally,</ul>
+            <ul><b>"only-if-cached"</b> – use a response from HTTP-cache, even if it’s stale. If there’s no response in
+                HTTP-cache, then error. Only works when mode is "same-origin".</ul>
+        </p>
+        <p>
+            <b>Redirect:</b> <br>
+            Normally, fetch transparently follows HTTP-redirects, like 301, 302 etc. <br>
+
+            The redirect option allows to change that: <br>
+            <ul><b>"follow"</b> – the default, follow HTTP-redirects,</ul>
+            <ul><b>"error"</b> – error in case of HTTP-redirect,</ul>
+            <ul><b>"manual"</b>– allows to process HTTP-redirects manually. In case of redirect, we’ll get a special
+                response object, with response.type="opaqueredirect" and zeroed/empty status and most other properies.
+            </ul>
+        </p>
+        <p>
+            <b>Integrity:</b> <br>
+            The integrity option allows to check if the response matches the known-ahead checksum. <br>
+
+            As described in the specification, supported hash-functions are SHA-256, SHA-384, and SHA-512, there might
+            be others depending on the browser. <br>
+
+            For example, we’re downloading a file, and we know that its SHA-256 checksum is “abcdef” (a real checksum is
+            longer, of course). <br>
+
+            We can put it in the integrity option, like this: <br>
+
+            <b>fetch('http://site.com/file', { <br>
+                integrity: 'sha256-abcdef' <br>
+                });</b> <br>
+            Then fetch will calculate SHA-256 on its own and compare it with our string. In case of a mismatch, an error
+            is triggered.
+        </p>
+        <p>
+            <b>Keepalive:</b> <br>
+
+            The keepalive option indicates that the request may “outlive” the webpage that initiated it. <br>
+
+            For example, we gather statistics on how the current visitor uses our page (mouse clicks, page fragments he
+            views), to analyze and improve the user experience. <br>
+
+            When the visitor leaves our page – we’d like to save the data to our server.
         </p>
     </div>
 </body>
