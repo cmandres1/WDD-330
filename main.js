@@ -41,7 +41,11 @@ const links = [{
     },
     {
         label: "Week 11 Notes",
-        url: "Week11/index.html"
+        url: "Week11/index2.html"
+    },
+    {
+        label: "Challenge",
+        url: "Challenge/index.html"
     }
 
 ];
